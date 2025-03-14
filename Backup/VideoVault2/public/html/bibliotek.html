@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoVault - Bibliotek</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Lägg till din externa CSS-fil -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../html/index.html">
+                    <img src="../images/logo2.png" alt="VideoVault logga" class="logo-img">
+                </a>
+            </div>              
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Sök efter videor...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="language-container">
+                <select id="languageSelector" onchange="changeLanguage()">
+                    <option value="sv">Svenska</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="../html/upload.html"><i class="fas fa-upload"></i><span>Ladda upp</span></a></li>
+                    <li><a href="../html/livestream.html"><i class="fas fa-broadcast-tower"></i><span>Livestream</span></a></li>
+                    <li><a href="../html/login.html"><i class="fas fa-user"></i><span>Logga in</span></a></li>
+                    <li><a href="../html/account.html"><i class="fas fa-user-circle"></i><span>Mitt konto</span></a></li>
+                </ul>            
+            </nav>            
+        </header>
+
+        <div class="sidebar" id="sidebar">
+            <h3>Kategorier</h3>
+            <ul>
+                <li><a href="../html/index.html"><i class="fas fa-home"></i> Hem</a></li>
+                <li><a href="../html/trending.html"><i class="fas fa-fire"></i> Trender</a></li>
+                <li><a href="../html/prenumerationer.html"><i class="fas fa-folder"></i> Prenumerationer</a></li>
+                <li><a href="../html/bibliotek.html"><i class="fas fa-book"></i> Bibliotek</a></li>
+                <li><a href="../html/historik.html"><i class="fas fa-history"></i> Historik</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <h1>Bibliotek</h1>
+            
+            <section id="spellistor">
+                <h2>Spellistor</h2>
+                <p>Här är dina sparade spellistor:</p>
+                <ul>
+                    <li>
+                        <h3>Min Favoritmusik</h3>
+                        <p>En samling av mina favoritlåtar.</p>
+                    </li>
+                    <li>
+                        <h3>Resa</h3>
+                        <p>Videor från mina resor runt om i världen.</p>
+                    </li>
+                    <li>
+                        <h3>Lärande</h3>
+                        <p>Utbildningsvideor och tutorials.</p>
+                    </li>
+                    <!-- Lägg till fler spellistor vid behov -->
+                </ul>
+            </section>
+
+            <section id="historik">
+                <h2>Historik</h2>
+                <p>Se din tittarhistorik här!</p>
+                <ul>
+                    <li>
+                        <h3>Video 1</h3>
+                        <p>Datum: 2024-10-20</p>
+                    </li>
+                    <li>
+                        <h3>Video 2</h3>
+                        <p>Datum: 2024-10-18</p>
+                    </li>
+                    <li>
+                        <h3>Video 3</h3>
+                        <p>Datum: 2024-10-15</p>
+                    </li>
+                    <!-- Lägg till fler historikposter vid behov -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="../js/common.js"></script> <!-- Lägg till din externa JavaScript-fil -->
+</body>
+</html>

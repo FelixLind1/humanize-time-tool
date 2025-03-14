@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Drive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Min Drive</h1>
+        <button id="upload-button" class="button">Ladda upp filer</button>
+        <input type="file" id="file-input" multiple hidden>
+    </header>
+
+    <main>
+        <!-- Dra och släpp område -->
+        <section id="drop-area" class="drop-area">
+            <p>Dra och släpp filer här eller klicka på "Ladda upp filer"</p>
+        </section>
+
+        <!-- Filöversikt -->
+        <section id="file-list" class="file-list">
+            <h2>Dina filer</h2>
+            <div id="file-container" class="file-container">
+                <!-- Här visas filerna dynamiskt -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Min Drive</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

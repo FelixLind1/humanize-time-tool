@@ -1,0 +1,400 @@
+/* === Loader === */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* === General Centering === */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* === Text Styling === */
+.caption_text,
+.progressAreaTime,
+.timer,
+.captions,
+.settings,
+.comment-box h4,
+.comment-box p,
+.comment-box textarea,
+.info-box h3,
+.info-box p,
+.icon,
+.controls-list,
+.controls-left,
+.controls-right,
+.volume_range,
+.playback li,
+.quality li,
+.comment-box .kommentarer,
+.caption li {
+  color: black;
+}
+
+/* === Comment Input === */
+#comment-input,
+#comments-container {
+  color: black;
+}
+
+#comment-input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+#comment-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* === Comments Container === */
+#comments-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto 0;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* === Comment Header (Username and Date) === */
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.comment-header strong {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.comment-header .comment-date {
+  font-style: italic;
+  color: #888;
+}
+
+/* === Comment Body === */
+.comment-body {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.comment-body p {
+  margin: 0;
+  word-wrap: break-word;
+}
+
+/* === Progress Area === */
+.progressAreaTime,
+.caption_text {
+  position: absolute;
+  left: 10px;
+  font-size: 16px;
+}
+
+.caption_text {
+  bottom: 20px;
+}
+
+.progressAreaTime {
+  bottom: 50px;
+}
+
+.bufferedBar,
+.progress-bar {
+  width: 100%;
+  height: 5px;
+}
+
+.bufferedBar {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.progress-bar {
+  background-color: #3498db;
+}
+
+/* === Controls === */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.controls-list {
+  display: flex;
+  align-items: center;
+}
+
+.controls-left,
+.controls-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.icon i {
+  font-size: 24px;
+}
+
+.volume_range {
+  width: 80px;
+}
+
+.timer {
+  font-size: 14px;
+}
+
+/* === Settings === */
+.settings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+.settings div {
+  margin-bottom: 10px;
+}
+
+.settings ul {
+  list-style: none;
+  padding: 0;
+}
+
+.settings li {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playback ul,
+.quality ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.playback li,
+.quality li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.playback li.active,
+.quality li.active {
+  background-color: #3498db;
+}
+
+/* === Captions === */
+.captions {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  font-size: 16px;
+}
+
+.caption ul {
+  list-style: none;
+  padding: 0;
+}
+
+.caption li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.caption li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === Video and Info Containers === */
+#video_container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.video-box {
+  width: 100%;
+  height: 400px;
+  background-color: #000;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.info-box h3,
+.info-box p {
+  margin: 0;
+}
+
+.info-box p {
+  margin: 5px 0;
+}
+
+/* === Comment Box === */
+.comment-box {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.comment-box textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.comment-box button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-box button:hover {
+  background-color: #0056b3;
+}
+
+/* === Comments Container === */
+.comments-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 500px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.comments-container div {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comments-container div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.comments-container div strong {
+  font-weight: 600;
+  color: #007bff;
+  font-size: 16px;
+}
+
+.comments-container div p {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #333333;
+  word-wrap: break-word;
+}
+
+.comments-container div .comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #888888;
+}
+
+.comments-container div .comment-date {
+  font-style: italic;
+}
+
+.comments-container div .comment-body {
+  margin-top: 12px;
+}
+
+/* === Scrollbar Styling === */
+.comments-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.comments-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.comments-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.comments-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}

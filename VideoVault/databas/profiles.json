@@ -1,0 +1,54 @@
+[
+  {
+      "id": "123",
+      "name": "Movies Express Pro",
+      "handle": "moviesexpresspro",
+      "logo": "../../databas/Profiles/logo.jpg",
+      "slogan": "SHORT FILMS",
+      "subscribers": 23,
+      "videosCount": 32,
+      "description": "Movies express pro is a movie channel.",
+      "popupInfo": "More information about the channel...",
+      "link1": "https://bensound.com",
+      "link1Text": "bensound.com",
+      "link2": "#",
+      "link2Text": "additional link",
+      "playlists": [
+          {
+              "title": "Best Movies",
+              "thumbnail": "path_to_thumbnail.jpg",
+              "description": "A collection of the best movies.",
+              "url": "/best-movies"
+          },
+          {
+              "title": "Top Shorts",
+              "thumbnail": "path_to_thumbnail.jpg",
+              "description": "The top short films of the year.",
+              "url": "/top-shorts"
+          }
+      ]
+  },
+  {
+    "id": "456",
+    "name": "Movies Express Pro",
+    "handle": "moviesexpresspro",
+    "logo": "../../databas/Profiles/logo.jpg",
+    "slogan": "SHORT FILMS",
+    "subscribers": 23,
+    "videosCount": 32,
+    "description": "Movies express pro is a movie channel.",
+    "popupInfo": "More information about the channel...",
+    "link1": "https://bensound.com",
+    "link1Text": "bensound.com",
+    "link2": "#",
+    "link2Text": "additional link",
+    "playlists": [
+        {
+            "title": "Horror Movies",
+            "thumbnail": "path_to_thumbnail.jpg",
+            "description": "A collection of scary movies.",
+            "url": "/horror-movies"
+        }
+    ]
+  }
+]

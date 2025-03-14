@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoVault - Bibliotek</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Lägg till din externa CSS-fil -->
+    <link rel="icon" href="/databas/images/favicon_io/favicon-16x16.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../html/index.html">
+                    <img src="/databas/images/VideoVault.jpg" alt="VideoVault logga" class="logo-img">
+                </a>
+            </div>              
+            <div class="search-container">
+                <input type="text" id="searchInput" class="searchInput" placeholder="Sök efter videor..." aria-label="Sök efter videor" data-translate="searchPlaceholder">
+                <button class="search-button" aria-label="Sök">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="language-container">
+                <select id="languageSelector" onchange="changeLanguage()" aria-label="Välj språk">
+                    <option value="sv">Svenska</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="../html/upload.html"><i class="fas fa-upload"></i><span data-translate="uploadText">Ladda upp</span></a></li>
+                    <li><a href="../html/livestream.html"><i class="fas fa-broadcast-tower"></i><span data-translate="livestreamText">Livestream</span></a></li>
+                    <li><a href="../html/login.html"><i class="fas fa-user"></i><span data-translate="loginText">Logga in</span></a></li>
+                    <li><a href="../html/profile.html"><i class="fas fa-user-circle"></i><span data-translate="accountText">Mitt konto</span></a></li>
+                </ul>            
+            </nav>            
+        </header>
+
+        <div class="sidebar" id="sidebar">
+            <h3 data-translate="categoriesTitle">Kategorier</h3>
+            <ul>
+                <li><a href="../html/index.html"><i class="fas fa-home"></i><span data-translate="homeText">Hem</span></a></li>
+                <li><a href="../html/trending.html"><i class="fas fa-fire"></i><span data-translate="trendingText">Trender</span></a></li>
+                <li><a href="../html/prenumerationer.html"><i class="fas fa-folder"></i><span data-translate="subscriptionsText">Prenumerationer</span></a></li>
+                <li><a href="../html/bibliotek.html"><i class="fas fa-book"></i><span data-translate="libraryText">Bibliotek</span></a></li>
+                <li><a href="../html/historik.html"><i class="fas fa-history"></i><span data-translate="historyText">Historik</span></a></li>
+            </ul>
+        </div>
+
+        <main>
+            <h1 data-translate="libraryPageTitle">Bibliotek</h1>
+            
+            <section id="spellistor">
+                <h2 data-translate="playlistsTitle">Spellistor</h2>
+                <p data-translate="playlistsDescription">Här är dina sparade spellistor:</p>
+                <ul>
+                    <li>
+                        <h3 data-translate="playlist1Title">Min Favoritmusik</h3>
+                        <p data-translate="playlist1Description">En samling av mina favoritlåtar.</p>
+                    </li>
+                    <li>
+                        <h3 data-translate="playlist2Title">Resa</h3>
+                        <p data-translate="playlist2Description">Videor från mina resor runt om i världen.</p>
+                    </li>
+                    <li>
+                        <h3 data-translate="playlist3Title">Lärande</h3>
+                        <p data-translate="playlist3Description">Utbildningsvideor och tutorials.</p>
+                    </li>
+                    <!-- Lägg till fler spellistor vid behov -->
+                </ul>
+            </section>
+
+            <section id="historik">
+                <h2 data-translate="historySectionTitle">Historik</h2>
+                <p data-translate="historyDescription">Se din tittarhistorik här!</p>
+                <ul>
+                    <li>
+                        <h3>Video 1</h3>
+                        <p>Datum: 2024-10-20</p>
+                    </li>
+                    <li>
+                        <h3>Video 2</h3>
+                        <p>Datum: 2024-10-18</p>
+                    </li>
+                    <li>
+                        <h3>Video 3</h3>
+                        <p>Datum: 2024-10-15</p>
+                    </li>
+                    <!-- Lägg till fler historikposter vid behov -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="../js/search.js"></script>
+    <script src="../js/language.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+common.js:2 Uncaught ReferenceError: require is not defined
+    at common.js:2:16
+(anonymous) @ common.js:2
+dynamicVideoData.js:2 
+        
+        
+       GET http://127.0.0.1:8081/public/html/video_data.json 404 (Not Found)
+(anonymous) @ dynamicVideoData.js:2
+dynamicVideoData.js:10 Det gick inte att hämta videodata: SyntaxError: Unexpected token '<', "<h1>404 - "... is not valid JSON
+(anonymous) @ dynamicVideoData.js:10
+Promise.catch
+(anonymous) @ dynamicVideoData.js:9

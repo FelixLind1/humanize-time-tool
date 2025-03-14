@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladda upp video</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Länk till gemensam CSS-fil -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../html/index.html">
+                    <img src="../images/logo2.png" alt="VideoVault logga" class="logo-img">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Sök efter videor...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="language-container">
+                <select id="languageSelector" onchange="changeLanguage()">
+                    <option value="sv">Svenska</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="../html/upload.html"><i class="fas fa-upload"></i><span>Ladda upp</span></a></li>
+                    <li><a href="../html/livestream.html"><i class="fas fa-broadcast-tower"></i><span>Livestream</span></a></li>
+                    <li><a href="../html/login.html"><i class="fas fa-user"></i><span>Logga in</span></a></li>
+                    <li><a href="../html/account.html"><i class="fas fa-user-circle"></i><span>Mitt konto</span></a></li>
+                </ul>            
+            </nav>              
+        </header>
+
+        <main>
+            <h2>Ladda upp din video</h2>
+            
+            <section id="drop-area" class="drop-area" aria-label="Dra och släpp område">
+                <p>Dra och släpp din video här eller klicka för att välja</p>
+                <input type="file" id="video-upload" name="video" accept="video/*" required aria-label="Välj video">
+            </section>
+
+            <form id="upload-form" class="upload-form" action="http://localhost:3000/upload" method="POST" enctype="multipart/form-data" style="display:none;">
+                <div class="video-container">
+                    <video id="video-preview" controls style="display: none;"></video>
+                </div>
+                <div class="form-group">
+                    <label for="video-title">Titel:</label>
+                    <input type="text" id="video-title" name="title" placeholder="Titel" required aria-label="Videotitel">
+                </div>
+
+                <div class="form-group">
+                    <label for="video-description">Beskrivning:</label>
+                    <textarea id="video-description" name="description" placeholder="Beskrivning" required aria-label="Videobeskrivning"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="video-tags">Taggar (separera med kommatecken):</label>
+                    <input type="text" id="video-tags" name="tags" placeholder="Taggar" required aria-label="Videotaggar">
+                </div>
+
+                <div class="form-group">
+                    <label for="thumbnail-upload">Välj thumbnail:</label>
+                    <input type="file" id="thumbnail-upload" name="thumbnail" accept="image/*" required aria-label="Välj thumbnail">
+                </div>
+
+                <button type="submit" class="upload-button">Ladda upp video</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Video Webbplats. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/upload.js"></script> <!-- Länk till extern JavaScript-fil -->
+</body>
+</html>

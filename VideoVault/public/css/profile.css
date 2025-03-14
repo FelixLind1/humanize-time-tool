@@ -1,0 +1,343 @@
+/* Huvudcontainer */
+.header-container {
+    color: black;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Justera till vänster */
+}
+
+/* Banner */
+.banner {
+    background-color: #ff0000;
+    background: url('banner-url-here') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Justera till vänster */
+    text-align: left; /* Justera texten till vänster */
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    padding-left: 20px; /* Lägger till lite padding till vänster */
+}
+
+/* Banner text */
+.banner h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.banner p {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    opacity: 0.8;
+}
+
+/* Kanalinformation */
+.channel-info {
+    display: flex;
+    align-items: flex-start; /* Justera till vänster */
+    justify-content: flex-start; /* Justera till vänster */
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-top: -30px; /* Minskat avstånd */
+}
+
+/* Logga */
+.logo-container {
+    display: flex;
+    justify-content: flex-start; /* Justera till vänster */
+    align-items: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.main-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #6a11cb;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Kanaltext */
+.channel-details {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.channel-details h2 {
+    font-size: 2rem;
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.channel-details p {
+    margin: 5px 0;
+    color: #777;
+    font-size: 1rem;
+}
+
+/* Länk i kanaltexten */
+.channel-details a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.channel-details a:hover {
+    text-decoration: underline;
+}
+
+/* Kanalåtgärder */
+.channel-actions {
+    display: flex;
+    justify-content: flex-start; /* Justera till vänster */
+    gap: 15px;
+    padding-top: 15px;
+}
+
+.channel-actions button {
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.channel-actions button:hover {
+    background-color: #2575fc;
+}
+
+/* Kanalinnehåll (videosektion) */
+.channel-pages {
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left; /* Justera texten till vänster */
+    font-size: 1rem;
+    color: #333;
+    border-top: 1px solid #ddd;
+}
+
+/* Stil för textlänkar */
+.channel-pages span {
+    margin: 0 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.channel-pages span:hover {
+    color: #6a11cb;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .channel-info {
+        flex-direction: column;
+        align-items: flex-start; /* Justera till vänster */
+    }
+
+    .main-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .channel-details h2 {
+        font-size: 1.8rem;
+    }
+
+    .channel-details p {
+        font-size: 0.9rem;
+    }
+
+    .channel-actions {
+        flex-direction: column;
+    }
+
+    .channel-pages span {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+}
+
+/* Kanalinnehåll (videosektion) */
+.channel-videos {
+    margin-top: 30px;
+}
+
+.channel-videos h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Justera texten till vänster */
+    cursor: pointer;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+}
+
+.video-card h4 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.video-card p {
+    color: #666;
+    font-size: 0.9rem;
+    padding: 0 10px 10px;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .channel-info {
+        flex-direction: column;
+        align-items: flex-start; /* Justera till vänster */
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* Popup */
+.popup {
+    display: none; /* Göm popupen som standard */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Mörk bakgrund för att täcka hela sidan */
+    z-index: 1000;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease; /* Mjuk övergång för att visa popupen */
+}
+
+.popup.show {
+    display: block; /* Gör popupen synlig */
+    opacity: 1; /* Gör popupen helt synlig */
+    pointer-events: auto; /* Aktivera interaktion med popupen */
+}
+
+.popup-content {
+    position: relative;
+    background-color: white;
+    margin: 15% auto; /* Centrerar popupen */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Justera bredden för att passa olika skärmstorlekar */
+    max-width: 500px; /* Sätt ett maxmått för popupens bredd */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lägg till skugga för att popupen ska sticka ut */
+}
+
+/* Stäng-knapp */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+    color: #6a11cb; /* Byt färg på stäng-knappen när användaren hovrar över den */
+}
+
+/* Gemensam styling för både videor och spellistor */
+.content-item {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.content-thumbnail {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.content-details {
+    flex: 1;
+}
+
+.content-title {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+.content-description {
+    font-size: 1rem;
+    color: #555;
+}
+
+.content-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.content-link:hover {
+    background-color: #0056b3;
+}

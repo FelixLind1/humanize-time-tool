@@ -1,0 +1,22 @@
+{
+  "name": "video-vault",
+  "version": "1.0.0",
+  "description": "Webbserver för video-upload och livestreaming",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^3.0.3",
+    "multer": "^1.4.5-lts.1"
+  },
+  "author": "Ditt namn",
+  "license": "MIT",
+  "keywords": []
+}

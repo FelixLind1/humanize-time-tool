@@ -1,0 +1,72 @@
+body {
+    background-color: #0d79e5; /* Ljusblå nyans för en lugn bakgrund */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    color: #333333; /* Mörkare textfärg för bättre kontrast */
+    display: flex;
+    justify-content: center; /* Centrera horisontellt */
+    align-items: center; /* Centrera vertikalt */
+    height: 100vh; /* Full höjd av viewport */
+    text-align: center; /* Texten centreras */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff; /* Vit bakgrund för container */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Mjuk skugga */
+    max-width: 600px;
+    width: 100%; /* Gör containern full bredd */
+    margin: 0 auto; /* Centrera containern horisontellt */
+}
+
+input {
+    margin-top: 15px;
+    padding: 12px 20px; /* Bekvämare padding */
+    font-size: 16px;
+    border: 2px solid #ccc; /* Ljus kantlinje */
+    border-radius: 8px; /* Rundade hörn */
+    background-color: #fff; /* Vit bakgrund */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtil skugga */
+    width: 100%; /* Full bredd */
+    max-width: 400px; /* Begränsa bredden */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Snygg övergång */
+}
+
+input section {
+    text-align: center
+}
+
+input:focus {
+    border-color: #007bff; /* Blå kant vid fokus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4); /* Mjuk blå skugga vid fokus */
+    outline: none; /* Ta bort standardblått fokus */
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px; /* Extra padding för en bekvämare knapp */
+    font-size: 16px;
+    font-weight: bold; /* Gör texten mer framträdande */
+    color: #fff; /* Vit text */
+    background-color: #007bff; /* Blå bakgrund */
+    border: none;
+    border-radius: 8px; /* Rundade hörn */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Snygga övergångar */
+}
+
+button:hover {
+    background-color: #0056b3; /* Mörkare blå vid hover */
+    transform: scale(1.05); /* Liten förstoring vid hover */
+}
+
+button:active {
+    background-color: #003d80; /* Ännu mörkare blå när knappen är nedtryckt */
+    transform: scale(1); /* Tillbaka till originalstorlek */
+}

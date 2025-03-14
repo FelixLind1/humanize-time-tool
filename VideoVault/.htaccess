@@ -1,0 +1,24 @@
+# Ange en anpassad 404-sida
+ErrorDocument 404 /public/404.html
+
+# Blockera åtkomst till index.html i public/html-mappen och visa 404-sidan om någon försöker komma åt den
+<Files "index.html">
+    Order allow,deny
+    Deny from all
+    ErrorDocument 403 /public/404.html
+</Files>
+
+# Ange en anpassad 404-sida
+ErrorDocument 404 /public/404.html
+
+# Blockera åtkomst till .html-filer i public/html-mappen och visa 404-sidan om någon försöker komma åt dem
+<FilesMatch "\.html$">
+    Order allow,deny
+    Deny from all
+    ErrorDocument 404 /public/404.html
+</FilesMatch>
+
+# Hantera alla 404-fel globalt
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*$ /public/404.html [L]

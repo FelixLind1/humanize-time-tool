@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textpublicering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <h1>Textpublicering</h1>
+    </header>    
+    
+    <main>
+        <h2>Välkommen till textpubliceringssidan</h2>
+        <p>Här kan du läsa och publicera textinlägg.</p>
+        
+        <!-- Formulär för att skapa ett nytt inlägg -->
+        <section id="newPostSection">
+            <h3>Skapa ett nytt inlägg</h3>
+            <form id="postForm">
+                <label for="postTitle">Titel:</label>
+                <input type="text" id="postTitle" required>
+                <br>
+                <label for="postContent">Innehåll:</label>
+                <textarea id="postContent" required></textarea>
+                <br>
+                <button type="submit">Publicera Inlägg</button>
+            </form>
+        </section>
+
+        <!-- Inlägg kommer att läggas till här -->
+        <div id="contentContainer"></div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

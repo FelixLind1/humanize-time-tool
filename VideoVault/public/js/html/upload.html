@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VideoVault - En plattform för videouppladdning och livestreaming">
+    <title data-translate="page-title">VideoVault</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="icon" href="/databas/images/favicon_io/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="hamburger-menu" id="hamburgerMenu" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <a href="index.html">
+                <img src="/databas/images/VideoVault.jpg" alt="VideoVault logga" class="logo-img" data-translate="logo-alt">
+            </a>
+        </div>               
+        <div class="search-container">
+            <input type="text" id="searchInput" class="searchInput" placeholder="Sök efter videor..." data-translate="searchPlaceholder">
+            <button id="search-button" class="search-button" onclick="search()">
+                <i class="fas fa-search" data-translate="searchButton"></i>
+            </button>
+        </div>
+        
+        <nav>
+            <ul class="nav-buttons">
+                <select id="languageSelect" onchange="changeLanguage(this.value)" data-translate="language-selector">
+                    <option value="sv" data-translate="language-sv">Svenska</option>
+                    <option value="en" data-translate="language-en">English</option>
+                </select>
+                <li><a href="../html/upload.html"><i class="fas fa-upload"></i><span data-translate="uploadText">Ladda upp</span></a></li>
+                <li><a href="../html/livestream.html"><i class="fas fa-broadcast-tower"></i><span data-translate="livestreamText">Livestream</span></a></li>
+                <li><a href="../html/login-signup.html"><i class="fas fa-user"></i><span data-translate="loginText">Logga in</span></a></li>
+                <li><a href="../html/profile.html"><i class="fas fa-user-circle"></i><span data-translate="accountText">Mitt konto</span></a></li>
+            </ul>          
+        </nav>                           
+    </header>
+
+    <!-- Huvudinnehåll -->
+    <div class="main-container">
+        <main>
+            <section class="upload-form-section">
+    
+                <!-- Drag and drop area -->
+                <section id="drop-area" class="drop-area" aria-label="Dra och släpp område">
+                    <p>Dra och släpp din video här eller klicka för att välja</p>
+                    <input type="file" id="video-upload" name="video" accept="video/*" required aria-label="Välj video" hidden>
+                </section>
+                
+                <!-- Formulär för uppladdning -->
+                <form id="upload-form" class="upload-form" style="display: none;">
+                    <h2>Ladda upp din video</h2>
+
+                    <!-- Video container for preview -->
+                <div class="video-container" style="display: none;">
+                    <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264">
+                        <source id="video-source" src="" type="video/mp4" />
+                        <source id="video-source-webm" src="" type="video/webm" />
+                        <p class="vjs-no-js">För att se denna video, aktivera JavaScript och uppgradera din webbläsare.</p>
+                    </video>
+                </div>
+
+                    <div class="form-group">
+                        <input type="text" id="video-title" name="title" placeholder="Titel" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <input type="text" id="video-description" name="description" placeholder="Beskrivning" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <input type="text" id="video-tags" name="tags" placeholder="Taggar" required>
+                        <div id="tags-container" class="tags-container"></div> <!-- Här kommer taggarna att visas -->
+                    </div>                                                         
+                
+                    <div class="form-group">
+                        <input type="file" id="thumbnail-upload" name="thumbnail" accept="image/*" required>
+                    </div>
+                    
+                    <!-- Thumbnail Preview -->
+                    <div class="form-group">
+                        <img id="thumbnail-preview" src="" alt="Thumbnail Preview" style="max-width: 100px; margin-top: 10px;">
+                    </div>
+                    
+                    <button type="button" class="upload-button" id="upload-button">Ladda upp video</button>
+                </form>                
+            </section>                              
+        </main>
+
+        <!-- Sidopanel -->
+        <aside class="sidebar">
+            <h3 data-translate="categories">Kategorier</h3>
+            <ul>
+                <li><a href="index.html" aria-label="Hem"><i class="fas fa-home"></i><span data-translate="home">Hem</span></a></li>
+                <li><a href="trending.html" aria-label="Trender"><i class="fas fa-fire-alt"></i><span data-translate="trending">Trender</span></a></li>
+                <li><a href="prenumerationer.html" aria-label="Prenumerationer"><i class="fas fa-folder"></i><span data-translate="subscriptions">Prenumerationer</span></a></li>
+                <li><a href="kanaler.html" aria-label="Kanaler"><i class="fas fa-users"></i><span data-translate="channels">Kanaler</span></a></li>
+                <li><a href="music.html" aria-label="Musik"><i class="fas fa-music"></i><span data-translate="music">Musik</span></a></li>
+            </ul>
+        </aside>
+    </div> <!-- main-container slut -->
+
+    <!-- Footer -->
+    <footer>
+        <script src="../js/language.js"></script>
+        <script src="../js/search.js"></script>
+        <script src="../js/upload.js"></script>
+        <script src="../js/sidebar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+    </footer>
+</body>
+</html>

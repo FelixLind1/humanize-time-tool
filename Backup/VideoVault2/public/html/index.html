@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="title">VideoVault</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Länk till CSS-fil -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../images/logo2.png" alt="VideoVault logga" class="logo-img">
+                </a>
+            </div>              
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="" aria-label="Sök efter videor" data-lang-key="searchPlaceholder">
+                <button class="search-button" aria-label="Sök">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="language-container">
+                <select id="languageSelector" onchange="changeLanguage(this.value)">
+                    <option value="sv">Svenska</option>
+                    <option value="en">English</option>
+                </select>
+            </div>            
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="../html/upload.html" data-lang-key="upload"><i class="fas fa-upload"></i><span></span></a></li>
+                    <li><a href="../html/livestream.html" data-lang-key="livestream"><i class="fas fa-broadcast-tower"></i><span></span></a></li>
+                    <li><a href="../html/login.html" data-lang-key="login"><i class="fas fa-user"></i><span></span></a></li>
+                    <li><a href="../html/account.html" data-lang-key="account"><i class="fas fa-user-circle"></i><span></span></a></li>
+                </ul>            
+            </nav>   
+        </header>
+
+        <div class="sidebar" id="sidebar">
+            <h3 data-lang-key="categories">Kategorier</h3>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i><span data-lang-key="home">Hem</span></a></li>
+                <li><a href="trending.html"><i class="fas fa-fire"></i><span data-lang-key="trends">Trender</span></a></li>
+                <li><a href="subscriptions.html"><i class="fas fa-folder"></i><span data-lang-key="subscriptions">Prenumerationer</span></a></li>
+                <li><a href="channels.html"><i class="fas fa-users"></i><span data-lang-key="channels">Kanaler</span></a></li>
+            </ul>
+        </div>
+
+        <div class="gridViewContainer" id="videoGrid">
+            <!-- Dynamiska videor kommer att läggas till här via JavaScript -->
+        </div> 
+
+    </div>
+    <footer>
+        <p data-lang-key="copyright">&copy; 2024 VideoVault. Alla rättigheter förbehållna.</p>
+    </footer>
+    <script src="../js/common.js"></script> <!-- Din huvud-JavaScript-fil -->
+    <script src="../js/language.js"></script> <!-- Den nya filen för språkbyten -->
+    <script src="../js/dynamicVideoData2.js"></script>
+</body>
+</html>

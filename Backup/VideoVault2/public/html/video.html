@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Länk till din CSS-fil -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- För ikoner -->
+    <title>Videovault - Videonamn</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../html/index.html">
+                    <img src="/images/logo2.png" alt="Videovault Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Sök efter videor..." aria-label="Sök efter videor">
+                <button class="search-button" aria-label="Sök">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="language-container">
+                <select id="languageSelector" onchange="changeLanguage()">
+                    <option value="sv">Svenska</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="../html/upload.html"><i class="fas fa-upload"></i><span>Ladda upp</span></a></li>
+                    <li><a href="../html/livestream.html"><i class="fas fa-broadcast-tower"></i><span>Livestream</span></a></li>
+                    <li><a href="../html/login.html"><i class="fas fa-user"></i><span>Logga in</span></a></li>
+                    <li><a href="../html/account.html"><i class="fas fa-user-circle"></i><span>Mitt konto</span></a></li>
+                </ul>  
+            </nav>
+        </header>
+
+        <div class="sidebar" id="sidebar">
+            <h3>Kategorier</h3>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Hem</a></li>
+                <li><a href="trending.html"><i class="fas fa-fire"></i> Trender</a></li>
+                <li><a href="prenumerationer.html"><i class="fas fa-folder"></i> Prenumerationer</a></li>
+                <li><a href="kanaler.html"><i class="fas fa-users"></i> Kanaler</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <div class="video-container">
+                <video id="video-preview" controls>
+                    <source src="path/to/your/video.mp4" type="video/mp4">
+                    Din webbläsare stödjer inte video-taggen.
+                </video>
+            </div>
+
+            <div class="video-details">
+                <h2 class="video-title">Videonamn</h2>
+                <p class="video-description">Detta är en beskrivning av videon. Här kan du ge mer information om innehållet.</p>
+                <div class="video-actions">
+                    <button class="like-button"><i class="fas fa-thumbs-up"></i> Gilla</button>
+                    <button class="share-button"><i class="fas fa-share"></i> Dela</button>
+                </div>
+            </div>
+
+            <section class="comments-section">
+                <h3>Kommentarer</h3>
+                <div class="comment-form">
+                    <textarea placeholder="Skriv en kommentar..." rows="4"></textarea>
+                    <button class="comment-button">Skicka</button>
+                </div>
+                <div class="comment-list">
+                    <!-- Dynamiskt genererade kommentarer kommer att visas här -->
+                    <div class="comment">
+                        <p><strong>Användare 1:</strong> Bra video!</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>Användare 2:</strong> Jag lärde mig mycket!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Videovault. Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <script src="../js/common.js"></script> <!-- Länk till din JavaScript-fil -->
+    <script src="../js/language.js"></script>
+    <script src="../js/dynamicVideoData2.js"></script>
+</body>
+</html>

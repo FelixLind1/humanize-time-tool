@@ -1,0 +1,68 @@
+/* Förhindra scrollning */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Canvas ska vara längst bak */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Canvas längst bak */
+}
+
+/* Textcontainer (center-container) ska vara över canvas */
+.center-container {
+  position: relative;
+  z-index: 10; /* Placera texten över canvas */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Vit ruta bakom texten */
+.error-page {
+  background-color: rgba(255, 255, 255, 0.621); /* Halvtransparent vit bakgrund */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Skugga för rutan */
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Felkod och text */
+.error-container h1 {
+  font-size: 4rem;
+  color: #000; /* Svart text för 404 */
+  margin: 0;
+}
+
+.error-container p {
+  color: #000; /* Svart text för beskrivning */
+  margin: 1rem 0;
+}
+
+/* Länk tillbaka till startsidan */
+.back-home {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.back-home:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,98 @@
+/* Grundinställningar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #003d80;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drop-area {
+    border: 2px dashed #aaa;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    background-color: #fafafa;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.drop-area p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.drop-area.highlight {
+    border-color: #007bff;
+    background-color: #e0f7ff;
+}
+
+.file-list {
+    width: 90%;
+    max-width: 800px;
+}
+
+.file-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.file-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.file-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.file-card p {
+    font-size: 14px;
+    margin: 10px 0 0 0;
+    word-wrap: break-word;
+}

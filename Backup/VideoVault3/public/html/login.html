@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="registerLoginTitle">Registrera och Logga In</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Länka till din CSS-fil -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Lägga till jQuery -->
+    <script src="../js/common.js" defer></script> <!-- Länka till din JavaScript-fil -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../html/index.html">
+                    <img src="../images/logo2.png" class="logo-img" alt="Logo">
+                </a>
+            </div>              
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="" aria-label="Sökfält" data-lang-key="searchPlaceholder">
+                <button class="search-button" aria-label="Sök">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="language-container">
+                <select id="languageSelector" onchange="changeLanguage()">
+                    <option value="sv">Svenska</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="../html/upload.html" aria-label="Ladda upp video"><i class="fas fa-upload"></i></a></li>
+                    <li><a href="../html/livestream.html" aria-label="Live sändning"><i class="fas fa-broadcast-tower"></i></a></li>
+                    <li><a href="../html/login.html" aria-label="Logga in"><i class="fas fa-user"></i></a></li>
+                    <li><a href="../html/account.html" aria-label="Mitt konto"><i class="fas fa-user-circle"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="form">
+            <ul class="tab-group">
+                <li class="tab active" id="signup-tab"><a href="#signup" data-lang-key="registerTab">Registrera</a></li>
+                <li class="tab" id="login-tab"><a href="#login" data-lang-key="loginTab">Logga In</a></li>
+            </ul>
+            
+            <div class="tab-content login active">
+                <h1 data-lang-key="welcomeBack">Välkommen tillbaka!</h1>
+                <form action="/" method="post" role="form" aria-labelledby="login-tab">
+                    <div class="field-wrap">
+                        <label for="login-email" data-lang-key="emailLabel">E-postadress<span class="req">*</span></label>
+                        <input type="email" id="login-email" name="login-email" required autocomplete="off" placeholder="exempel@domain.com"/>
+                    </div>
+                    <div class="field-wrap">
+                        <label for="login-password" data-lang-key="passwordLabel">Lösenord<span class="req">*</span></label>
+                        <input type="password" id="login-password" name="login-password" required autocomplete="off" placeholder="Ditt lösenord"/>
+                    </div>
+                    <p class="forgot"><a href="#" data-lang-key="forgotPassword">Glömt lösenordet?</a></p>
+                    <button type="submit" class="button button-block" data-lang-key="loginButton">Logga In</button>
+                </form>
+            </div><!-- tab-content login -->
+            
+            <div class="tab-content signup">
+                <h1 data-lang-key="signUpFree">Registrera dig gratis</h1>
+                <form action="../databas/process.php" method="post" role="form" aria-labelledby="signup-tab">
+                    <div class="top-row">
+                        <div class="field-wrap">
+                            <label for="first-name" data-lang-key="firstNameLabel">Förnamn<span class="req">*</span></label>
+                            <input type="text" id="first-name" name="first-name" required autocomplete="off" placeholder="Ditt förnamn"/>
+                        </div>
+                        <div class="field-wrap">
+                            <label for="last-name" data-lang-key="lastNameLabel">Efternamn<span class="req">*</span></label>
+                            <input type="text" id="last-name" name="last-name" required autocomplete="off" placeholder="Ditt efternamn"/>
+                        </div>
+                    </div>
+                    <div class="field-wrap">
+                        <label for="signup-email" data-lang-key="emailLabel">E-postadress<span class="req">*</span></label>
+                        <input type="email" id="signup-email" name="signup-email" required autocomplete="off" placeholder="exempel@domain.com"/>
+                    </div>
+                    <div class="field-wrap">
+                        <label for="signup-password" data-lang-key="createPasswordLabel">Skapa ett lösenord<span class="req">*</span></label>
+                        <input type="password" id="signup-password" name="signup-password" required autocomplete="off" placeholder="Skapa ett lösenord"/>
+                    </div>
+                    <button type="submit" class="button button-block" data-lang-key="signUpButton">Börja nu</button>
+                </form>
+            </div><!-- tab-content signup -->
+        </main> <!-- /form -->        
+    </div>
+
+    <script src="../js/server.js" defer></script>
+    <script src="../js/language.js" defer></script>
+</body>
+</html>

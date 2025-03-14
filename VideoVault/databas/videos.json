@@ -1,0 +1,42 @@
+[
+  {
+      "id": "1",
+      "title": "Exempelvideo 1",
+      "description": "Detta är en beskrivning av exempelvideo 1.",
+      "url": "https://www.example.com/video1",
+      "uploadDate": "2025-01-30",
+      "thumbnail": "https://www.example.com/thumbnails/video1.jpg",
+      "views": 1234,
+      "channelId": "123"
+  },
+  {
+      "id": "2",
+      "title": "Exempelvideo 2",
+      "description": "Detta är en beskrivning av exempelvideo 2.",
+      "url": "https://www.example.com/video2",
+      "uploadDate": "2025-01-29",
+      "thumbnail": "https://www.example.com/thumbnails/video2.jpg",
+      "views": 5678,
+      "channelId": "123"
+  },
+  {
+      "id": "3",
+      "title": "Exempelvideo 3",
+      "description": "Detta är en beskrivning av exempelvideo 3.",
+      "url": "https://www.example.com/video3",
+      "uploadDate": "2025-01-28",
+      "thumbnail": "https://www.example.com/thumbnails/video3.jpg",
+      "views": 2345,
+      "channelId": "456"
+  },
+  {
+      "id": "4",
+      "title": "Exempelvideo 4",
+      "description": "Detta är en beskrivning av exempelvideo 4.",
+      "url": "https://www.example.com/video4",
+      "uploadDate": "2025-01-27",
+      "thumbnail": "https://www.example.com/thumbnails/video4.jpg",
+      "views": 6789,
+      "channelId": "456"
+  }
+]

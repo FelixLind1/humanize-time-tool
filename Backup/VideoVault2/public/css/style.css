@@ -1,0 +1,442 @@
+/* Länk till Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Länk till Font Awesome (ikoner) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa; /* Bakgrundsfärg */
+  color: #333; /* Textfärg */
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; /* Ställer in riktningen för containerinnehåll */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px; /* Höjd för header */
+  background: linear-gradient(135deg, #4CAF50, #FF5722); /* Gradient */
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Skugga färg */
+}
+
+/* Ändrar storleken på menyknapparna */
+header .nav-buttons {
+  font-size: 18px; /* Större text */
+  padding: 12px 20px; /* Ökad padding för större knapp */
+  /* Eventuellt kan du lägga till border-radius om du vill att knapparna ska vara rundade */
+  border-radius: 8px; 
+}
+
+/* Om du vill ha större knappar vid hover */
+header .menu-buttons:hover {
+  font-size: 20px; /* Ändrar storleken på texten vid hover */
+  padding: 14px 24px; /* Ökad padding vid hover */
+}
+
+.nav-buttons {
+  margin-left: auto; /* Detta skjuter knapparna till höger */
+  display: flex; /* Flexbox för att placera knapparna i rad */
+}
+
+.nav-buttons button {
+  margin-left: 20px; /* Litet avstånd mellan knapparna */
+  background-color: #FF5722; /* Orange färg för knappar */
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Medium avstånd */
+  border-radius: 5px; /* Rundade hörn */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1rem; /* Justera fontstorlek för knappar */
+}
+
+.nav-buttons button:hover {
+  background-color: #4CAF50; /* Grön färg vid hover */
+  transform: translateY(-2px);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 10px; /* Medium avstånd */
+}
+
+.logo-img {
+  width: 110px;
+  height: 90px;
+  margin-top: 20px;
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  max-width: 600px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px; /* Medium avstånd */
+  border: none;
+  border-radius: 20px 0 0 20px; /* Rundade hörn */
+  font-size: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Lägger till en liten skugga */
+}
+
+.search-button {
+  background-color: white;
+  border: none;
+  padding: 10px 20px; /* Medium avstånd */
+  border-radius: 0 20px 20px 0; /* Rundade hörn */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #e0e0e0; /* Ljusare färg vid hover */
+}
+
+#videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Skapar en flexibel grid */
+  gap: 20px; /* Avstånd mellan videokorten */
+  padding: 20px;
+}
+
+.video-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+}
+
+.video-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.video-card a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.video-card a:hover {
+  text-decoration: underline;
+}
+
+.language-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 20px;
+}
+
+.language-container select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rundade hörn */
+  background-color: #ffffff; /* Ny bakgrundsfärg */
+  color: #333; /* Textfärg */
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.language-container select:hover {
+  background-color: #f0f0f0; /* Ljusare färg vid hover */
+  border-color: #aaa; /* Ändrad färg på ramen vid hover */
+}
+
+.language-container select:focus {
+  outline: none;
+  border-color: #4CAF50; /* Färg vid fokus */
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center; /* Justera elementen till mitten vertikalt */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 25px; /* Ökat avstånd mellan menyalternativ */
+}
+
+nav a {
+  color: white; /* Behåller den vita färgen för texten */
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem; /* Ökad textstorlek för länkar */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: #FFD700; /* Gul färg vid hover */
+  transform: scale(1.1); /* Liten förstoring vid hover */
+}
+
+nav a i {
+  margin-right: 10px; /* Ökat avstånd till texten */
+  font-size: 1.8rem; /* Större ikonstorlek */
+  color: #fff; /* Ikonerna är vita för att matcha texten */
+}
+
+.nav-buttons {
+  margin-left: 20px;
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Öka padding för större knapp */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1.5 rem; /* Öka fontstorlek för större text */
+}
+
+.nav-buttons button:hover {
+  color: #FFD700; /* Gul färg vid hover */
+  transform: scale(1.1); /* Liten förstoring vid hover */
+}
+
+.nav-buttons button i {
+  margin-right: 8px; /* Avstånd mellan ikoner och text i knappar */
+  font-size: 3rem; /* Justerad ikonstorlek för knappar */
+}
+
+.sidebar {
+  width: 260px; /* Ökad bredd */
+  background-color: #ffffff; /* Bakgrundsfärg för sidomenyn */
+  padding: 25px; /* Lite mer padding för utrymme */
+  height: calc(100vh - 70px); /* Höjd minus header */
+  position: fixed;
+  top: 70px; /* Höjd för header */
+  left: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtil skugga för mer djup */
+}
+
+.sidebar h3 {
+  font-size: 1.5rem; /* Förstorar rubriken */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Mörkare textfärg för bättre kontrast */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px; /* Mer mellanrum mellan objekt */
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center; /* Ikon och text justerade i mitten */
+  font-size: 1.2rem; /* Större textstorlek för länkar */
+  color: #555; /* Neutral färg för länkar */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease; /* Animation vid hover */
+}
+
+.sidebar ul li a:hover {
+  color: #000; /* Mörkare text vid hover */
+  transform: translateX(5px); /* Lätt förskjutning vid hover */
+}
+
+.sidebar ul li i {
+  font-size: 1.5rem; /* Större ikoner */
+  margin-right: 10px; /* Avstånd mellan ikon och text */
+  color: #888; /* Neutral ikonfärg */
+}
+
+.sidebar ul li a:hover i {
+  color: #000; /* Mörkare ikonfärg vid hover */
+}
+
+main {
+  margin-left: 240px; /* Utrymme för sidomenyn */
+  padding: 90px 20px 20px; /* Utrymme för header och padding */
+  flex-grow: 1;
+}
+
+h2 {
+  color: #4CAF50; /* Grön färg */
+  margin-bottom: 20px; /* Stort avstånd */
+  font-size: 2rem; /* Större rubrik */
+}
+
+.upload-form {
+  background-color: #ffffff; /* Bakgrundsfärg för formulär */
+  padding: 20px; /* Stort avstånd */
+  border-radius: 10px; /* Rundade hörn */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Skugga */
+  margin-top: 20px; /* Stort avstånd */
+}
+
+/* Styling för drag-och-släpp område */
+#drop-area {
+  border: 2px dashed #4CAF50; /* Grön färg */
+  border-radius: 10px; /* Rundade hörn */
+  padding: 20px; /* Stort avstånd */
+  text-align: center;
+  background-color: #f0f0f0; /* Bakgrundsfärg */
+  margin-bottom: 20px; /* Stort avstånd */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-form h3 {
+  color: #4CAF50; /* Grön färg */
+  margin-bottom: 10px; /* Medium avstånd */
+  font-size: 1.5rem; /* Större rubrik för formuläret */
+}
+
+.upload-form label {
+  display: block;
+  margin-bottom: 5px; /* Litet avstånd */
+  font-weight: bold;
+}
+
+.upload-form input[type="text"],
+.upload-form input[type="file"],
+.upload-form textarea {
+  width: 100%; /* Fyller hela bredden */
+  padding: 10px; /* Medium avstånd */
+  border: 1px solid #ccc; /* Ramar */
+  border-radius: 5px; /* Rundade hörn */
+  margin-bottom: 20px; /* Stort avstånd */
+  background-color: #ffffff; /* Bakgrundsfärg */
+  transition: border-color 0.3s;
+}
+
+.upload-form input[type="text"]:focus,
+.upload-form input[type="file"]:focus,
+.upload-form textarea:focus {
+  border-color: #4CAF50; /* Grön färg vid fokus */
+}
+
+.upload-form button {
+  background-color: #4CAF50; /* Grön färg */
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Medium avstånd */
+  border-radius: 5px; /* Rundade hörn */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-form button:hover {
+  background-color: #45a049; /* Mörkare grön färg vid hover */
+}
+
+/* Styling för inloggningsformulär */
+.login-form {
+  max-width: 400px; /* Maxbredd för inloggningsformuläret */
+  margin: 0 auto; /* Centrerad layout */
+  padding: 20px; /* Stort avstånd */
+  background-color: #ffffff; /* Bakgrundsfärg */
+  border-radius: 10px; /* Rundade hörn */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Skugga */
+}
+
+.login-form h3 {
+  color: #4CAF50; /* Grön färg */
+  margin-bottom: 20px; /* Stort avstånd */
+  text-align: center; /* Centrera rubriken */
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px; /* Litet avstånd */
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%; /* Fyller hela bredden */
+  padding: 10px; /* Medium avstånd */
+  border: 1px solid #ccc; /* Ramar */
+  border-radius: 5px; /* Rundade hörn */
+  margin-bottom: 20px; /* Stort avstånd */
+}
+
+.login-form button {
+  background-color: #4CAF50; /* Grön färg */
+  color: white;
+  border: none;
+  padding: 10px; /* Medium avstånd */
+  width: 100%; /* Fyller hela bredden */
+  border-radius: 5px; /* Rundade hörn */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #45a049; /* Mörkare grön färg vid hover */
+}
+
+footer {
+  background-color: #333; /* Mörk bakgrundsfärg */
+  color: white;
+  text-align: center; /* Centrerad text */
+  padding: 20px; /* Stort avstånd */
+  position: relative; /* Relativ positionering */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: auto; /* Skapar utrymme över footer */
+}
+
+footer a {
+  color: white; /* Vit färg för länk */
+  text-decoration: none; /* Ingen understrykning */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Understrykning vid hover */
+}
+
+/* Responsiva media queries */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full bredd på mobil */
+    height: auto; /* Automatisk höjd */
+    position: relative; /* Relativ positionering */
+  }
+
+  main {
+    margin-left: 0; /* Ingen marginal */
+  }
+
+  .nav-buttons {
+    flex-direction: column; /* Vertikal layout */
+  }
+}

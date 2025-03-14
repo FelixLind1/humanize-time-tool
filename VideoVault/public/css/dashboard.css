@@ -1,0 +1,78 @@
+/* Grundläggande stilar för hela sidan */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main section */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Snabb åtkomst-sektionen */
+.quick-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.quick-links a {
+    background-color: #0073e6;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.quick-links a:hover {
+    background-color: #005bb5;
+}
+
+/* Aktivitetssektionen */
+section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer-stilar */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

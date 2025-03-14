@@ -1,0 +1,1318 @@
+/* Global Styles */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: auto;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #121212;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  color: #cccccc;
+}
+
+body.sidebar-open {
+  margin-left: 250px; /* Detta skapar utrymme för sidopanelen */
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+form {
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #121212; /* Samma färg som sidebar och main */
+  padding: 10px 20px;
+  border-bottom: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+
+/* Kanalens banner */
+.banner {
+  width: 100%;
+  height: 200px; /* Justera höjden på bannern */
+  background-color: #333; /* Grå bakgrund för bannern */
+  position: relative;
+}
+
+.banner-content {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.banner h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.banner p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Kanallogga under bannern */
+.logo-under-banner {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Placera loggan till vänster */
+  align-items: center;
+  margin-top: -50px; /* Justera för att lägga loggan närmare bannern */
+  padding: 10px 20px;
+  background-color: #f9f9f9; /* Ljus bakgrund för loggans container */
+}
+
+.logo-under-banner .logo-img {
+  width: 100px; /* Justera loggans storlek här */
+  height: 100px;
+  border-radius: 50%; /* För en rund logga */
+  margin-right: 15px;
+}
+
+/* Allmänna stilar för kanalinformation */
+.channel-info {
+  display: flex;
+  align-items: center; /* Vertikal centrering av text och statistik */
+  flex-wrap: wrap; /* Så att innehållet bryts på små skärmar */
+  justify-content: flex-start; /* Justera till vänster */
+  width: 100%; /* Se till att hela bredden används för att fördela utrymme */
+}
+
+/* Kanalnamn */
+.channel-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  flex-basis: 100%; /* Gör kanalnamnet en egen rad om det behövs */
+}
+
+/* Användarnamn och statistiska uppgifter */
+.channel-handle,
+.channel-stats {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 5px 0;
+  display: inline-block; /* Se till att de beter sig som inline-element */
+}
+
+/* Separera användarnamn och statistik */
+.channel-handle {
+  margin-right: 10px; /* Lägg till mellanrum mellan @handtaget och prickarna */
+}
+
+.channel-stats {
+  display: flex; /* För att kunna hantera "subscribers" och "videos" i rad */
+  align-items: center; /* Vertikal centrering */
+}
+
+/* Prenumeranter och videor */
+.subscribers,
+.videos {
+  font-weight: bold;
+  color: #606060;
+  margin-right: 10px; /* Mellanrum mellan prenumeranter och videor */
+}
+
+.channel-stats .videos {
+  margin-right: 0; /* Ta bort extra mellanrum efter "videos" */
+}
+
+/* Prickar */
+.dot {
+  font-size: 20px; /* Justera storleken på punkterna */
+  color: #ffffff; /* Färgen på punkterna */
+  margin: 0 3px; /* Jämnt mellanrum på båda sidor om punkterna */
+  display: inline-block; /* Se till att de beter sig som inline-element */
+}
+
+/* Beskrivning och "Visa mer"-knappen */
+.description {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.description span {
+  color: #606060;
+}
+
+/* Stilar för 'mer'-knappen */
+.more-button {
+  color: #ffffff; /* Vit textfärg för länken */
+  text-decoration: none; /* Ta bort understrykning */
+  font-size: 14px; /* Anpassa textstorleken */
+  cursor: pointer; /* Gör pekhanden synlig */
+}
+
+.more-button:hover {
+  text-decoration: underline; /* Lägg till understrykning vid hovring */
+}
+
+/* Popup-stil */
+.popup {
+  display: none; /* Göm popupen som standard */
+  position: fixed; /* Fäst popupen på skärmen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Bakgrundsfärg med transparens */
+  z-index: 1000; /* Se till att popupen är ovanpå allt */
+  overflow: auto; /* Om innehållet är för stort, gör det rullbart */
+}
+
+/* Innehållet i popupen */
+.popup-content {
+  position: relative;
+  background-color: rgb(33, 33, 33);
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Text i popupen */
+.popup-content p {
+  color: rgb(255, 255, 255);
+}
+
+/* Stängningsknappen "X" */
+.close {
+  font-size: 30px;
+  color: #000;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 40px; /* Sätt en fast bredd */
+  height: 40px; /* Sätt en fast höjd så att det blir en cirkel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Gör den rund för att skapa en cirkel */
+  transition: background-color 0.3s ease; /* Gör övergången mjuk */
+}
+
+.close:hover {
+  color: #fff; /* Ändra textfärgen till vit */
+  background-color: #d3d3d3; /* Ljusgrå bakgrundsfärg */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Show more button */
+.show-more {
+  background-color: #007bff; /* YouTube-lik blå */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.show-more:hover {
+  background-color: #0056b3; /* Mörkare blå vid hover */
+}
+
+/* "Website Link" */
+.website-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+/* Extra länkar */
+.extra-links {
+  display: flex;
+  gap: 10px;
+}
+
+.extra-links a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+/* Kanalens huvudinformation */
+.channel-main-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Justera för att minska avståndet */
+}
+
+/* Profilflikarna (om du har en separat container för dessa) */
+.profile-tabs {
+  margin-top: 10px; /* Lägg till eller justera för att minska avståndet */
+  padding-top: 5px; /* Justera om det behövs */
+}
+
+/* Justera om det behövs för andra delar av layouten */
+.channel-details {
+  margin-bottom: 0; /* Ta bort eventuella extra mellanrum */
+}
+
+.channel-banner-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.channel-logo-container {
+  margin: 0; /* Ta bort alla marginaler */
+  padding: 0; /* Ta bort all padding */
+  margin-right: 20px; /* Behåll rätt marginal om det behövs */
+  display: flex; /* Om du vill centrera innehåll vertikalt */
+  align-items: center; /* Centrera innehållet vertikalt */
+}
+
+/* Uppdaterad storlek på kanalloggan */
+.channel-logo {
+  width: 300px; /* Större logga än tidigare */
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrera logotypen */
+  flex: 0 0 10px;
+  margin: 0;
+}
+
+.logo-img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* För att skapa en stor logga under bannern */
+.logo-under-banner {
+  width: 150px; /* Justera till önskad storlek på loggan */
+  margin: 0 auto; /* Centrerar loggan horisontellt */
+  border-radius: 100px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Lägg till en mjuk skugga */
+}
+
+/* Stil för profil- eller loginknappen */
+.profile-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+  margin-right: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.2s, transform 0.2s ease-in-out; /* Smidigare övergång */
+}
+
+.profile-logo:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.profile-logo:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Stil för Font Awesome-ikonen */
+.fontawesome-logo i {
+  font-size: 28px; /* Storlek på ikonen */
+  color: #ffffff; /* Färg på ikonen */
+}
+
+/* Bildstil för profilbilden */
+.profile-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Anpassa bilden till området */
+  border-radius: 50%; /* Säkerställer rund form även för bilder */
+  border: 2px solid #fff; /* Tunn vit kant runt bilden */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Lägger till skugga för en mer framträdande bild */
+}
+
+/* Dropdown-stil */
+.profileDropdown {
+  appearance: none; /* Tar bort webbläsarens inbyggda stil */
+  -webkit-appearance: none; /* Safari-specifik */
+  -moz-appearance: none; /* Firefox-specifik */
+  width: 250px; /* Justera bredden */
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  color: #333; /* Textfärg */
+  background-color: #f9f9f9; /* Bakgrundsfärg */
+  border: 1px solid #ccc; /* Kantfärg */
+  border-radius: 8px; /* Rundade hörn */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Mjuk skugga */
+  outline: none; /* Ta bort standard-outline */
+  cursor: pointer; /* Ändra muspekaren till pekarhand */
+  transition: all 0.3s ease; /* Mjuk övergångseffekt */
+}
+
+.profileDropdown:hover {
+  background-color: #f1f1f1; /* Ändra bakgrundsfärg vid hover */
+  border-color: #999; /* Ändra kantfärg vid hover */
+}
+
+.profileDropdown:focus {
+  border-color: #007BFF; /* Markeringsfärg */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blå skugga vid fokus */
+}
+
+.profileDropdown option {
+  color: #333; /* Textfärg för alternativen */
+  background-color: #fff; /* Bakgrundsfärg för alternativen */
+  padding: 10px; /* Avstånd mellan alternativen */
+}
+
+/* För att säkerställa samma stil på alla webbläsare */
+select::-ms-expand {
+  display: none; /* Tar bort pilen på Internet Explorer/Edge */
+}
+
+/* Lägga till en egen pil för dropdown */
+.profileDropdown {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE2IDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMUwxMiA4TTE2IDFMNiA4IiBzdHJva2U9IiM1NTUiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 10px;
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 20px;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #333333;
+  color: #ffffff;
+  min-width: 200px;
+}
+
+.searchInput::placeholder {
+  color: #bbbbbb;
+}
+
+.search-button {
+  padding: 10px 15px;
+  background: #ff5722;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  background: #e64a19;
+}
+
+/* Layout för knappar under sökrutan */
+.search-and-buttons {
+  margin-top: 20px;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px; /* Mellanrum mellan knappar */
+  margin-top: 10px;
+  justify-content: center; /* Centrerar knapparna horisontellt */
+}
+
+.action-button {
+  padding: 8px 12px;
+  background-color: #4A90E2; /* Färg på knapparna */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #357ABD; /* Färg när man hovrar */
+}
+
+/* Navigation */
+.nav-buttons,
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a,
+.nav-buttons .dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
+  background-color: #3a3a3a;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+nav ul li a:hover,
+.nav-buttons .dropdown-menu li a:hover {
+  background-color: #4A90E2;
+}
+
+/* Dropdown Menu */
+.nav-buttons li {
+  position: relative;
+}
+
+.nav-buttons .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #3a3a3a;
+  border-radius: 5px;
+  padding: 10px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-buttons .dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-buttons select {
+  padding: 6px 8px;
+  background: #3a3a3a;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  width: 90px;
+}
+
+/* Cirkulär knapp */
+.circle-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0; /* Ta bort extra padding */
+  background-color: #3a3a3a; /* Samma bakgrund som andra knappar */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.circle-button i {
+  font-size: 20px;
+}
+
+.circle-button:hover {
+  background-color: #4A90E2;
+  transform: scale(1.1); /* Liten förstoring vid hover */
+}
+
+.circle-button span {
+  display: none; /* Dölj texten för att hålla cirkeln ren */
+}
+
+/* Sidopanelen */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: -250px;
+  width: 250px;
+  height: calc(100% - 60px);
+  background-color: #121212; /* Samma färg som header och main */
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+/* Sidopanelen öppen (när klassen 'open' läggs till) */
+.sidebar.open {
+  background-color: #121212; /* Lite ljusare bakgrund när den är öppen */
+  left: 0; /* Visar sidopanelen genom att flytta den till vänster om skärmen */
+  transform: translateX(0); /* Flytta tillbaka sidopanelen till sitt ursprungliga läge */
+  transition: none; /* Ingen övergång längre */
+}
+
+/* Sidopanel som är stängd */
+.sidebar {
+  left: -250px; /* Döljer sidopanelen utanför skärmen */
+  transform: translateX(-100%); /* Sidopanelen är gömd till vänster */
+  transition: none; /* Ingen övergång längre */
+}
+
+/* För att göra innehållet på sidan mer synligt */
+body {
+  margin-left: 0; /* Om du vill att sidinnehållet flyttas när sidopanelen öppnas */
+  transition: none; /* Ingen övergång längre */
+}
+
+body.sidebar-open {
+  margin-left: 250px; /* Flyttar sidans innehåll när sidopanelen är öppen */
+}
+
+.sidebar h3 {
+  margin: 0 0 10px;
+  color: #ff5722;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li:first-child {
+  margin-top: 0; /* Ta bort extra utrymme ovanför den första länken */
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 10px;
+  background: #333333;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background: #ff5722;
+}
+
+/* Main Content */
+.main-content {
+  margin: 60px 0 0 0; /* Flyttar innehållet till höger när sidopanelen är stängd */
+  padding: 20px;
+  transition: margin-left 0.3s ease; /* Gör så att huvudinnehållet flyttas smidigt vid öppning/stängning av sidopanelen */
+}
+
+
+/* För mindre skärmar */
+@media screen and (max-width: 600px) {
+  #videoGrid {
+    grid-template-columns: 1fr; /* En kolumn på små skärmar */
+  }
+}
+
+/* For tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  header {
+    padding: 10px 15px;
+    height: 50px;
+  }
+
+  .logo {
+    flex: 0 0 150px;
+  }
+
+  .search-container {
+    max-width: 400px;
+  }
+
+  .sidebar {
+    width: 200px;
+    top: 50px;
+  }
+
+  .main-content {
+    margin: 50px 0 0 200px;
+  }
+
+  #videoGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+/* For mobile devices (max-width: 600px) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 10px;
+    height: 40px;
+  }
+
+  .logo {
+    flex: 0 0 120px;
+  }
+
+  .search-container {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .searchInput {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .nav-buttons,
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    top: 40px;
+    position: relative;
+    height: auto;
+  }
+
+  .main-content {
+    margin: 40px 0 0 0;
+  }
+
+  #videoGrid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .video-thumbnail-container {
+    height: 180px;
+  }
+
+  .video-title {
+    font-size: 14px;
+  }
+
+  .video-description {
+    font-size: 12px;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 5px; /* Justera avståndet mellan main-container och banner */
+}
+
+/* För att justera main (innehållet) */
+main {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* För sidopanel (sidebar) */
+.sidebar {
+  flex-basis: 250px;
+  padding: 10px;
+}
+
+.spacing-between-header-form {
+  height: 50px; /* Sätt en specifik höjd för att skapa utrymme */
+  padding-left: 200px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+
+.hamburger-menu i {
+  font-size: 24px;
+  color: #fff; /* Justera färgen på ikonen */
+}
+
+.hamburger-menu .bar {
+  height: 1px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu .bar:first-child {
+  margin-bottom: 2px;
+}
+
+.hamburger-menu .bar:last-child {
+  margin-top: 2px;
+}
+
+/* För små skärmar */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hamburger-menu.active + nav {
+    display: block;
+  }
+}
+
+/* Container för video-rutorna - Både på index och profil */
+#videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsiv grid-layout */
+  gap: 20px;
+  padding: 10px;
+  color: #000;
+}
+
+#videoGrid p {
+  color: white; /* Sätt textfärgen till vit för båda */
+}
+
+/* Vidare styling av video-objekten */
+.video-thumbnail-container {
+  position: relative;
+  width: 100%;
+  height: 180px; /* Justera höjden så att rutorna blir rektangulära */
+  max-width: 320px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%; /* Se till att bilden täcker hela containern */
+  border-radius: 8px;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; /* Gör bildens hörn rundade */
+  object-fit: cover; /* Se till att bilden täcker hela området */
+}
+
+/* Video info layout */
+.video-info {
+  display: flex;
+  flex-direction: column; /* Vertikal layout för titeln, kanalnamn och statistik */
+  justify-content: flex-start; /* Justera så att texten är i toppen */
+  padding: 10px 0;
+  height: 100%;
+  color: #ffffff;
+}
+
+/* Titel och kanalnamn */
+.video-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.4; /* Öka mellanrummet mellan titel och kanalnamn */
+}
+
+.video-channel {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.p {
+  color: #ff0000;
+}
+
+
+
+.channel-logo {
+  max-width: 80px; /* Justera storleken på loggan */
+  height: auto;
+  margin-top: 10px;
+  border-radius: 30px;
+}
+
+/* Visningar och tid */
+.video-stats {
+  font-size: 12px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.video-views, .video-time {
+  font-weight: normal;
+  color: #ffffff;
+}
+
+/* Standard stil för videoduration */
+.video-duration {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Stil för livestream, när video är live */
+.video-duration.live-duration {
+  background-color: red;
+  color: white;
+}
+
+/* Responsivitet för olika skärmstorlekar */
+@media (max-width: 1200px) {
+  #videoGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Mindre kolumner vid smalare skärmar */
+  }
+}
+
+@media (max-width: 800px) {
+  #videoGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Endast 1-2 kolumner på små skärmar */
+  }
+}
+
+@media (max-width: 500px) {
+  #videoGrid {
+    grid-template-columns: 1fr; /* Endast en kolumn på mycket små skärmar */
+  }
+}
+
+/* Anpassa när sidebar är stängd eller öppen */
+.sidebar-open #videoGrid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Justera antalet kolumner när sidebar är öppen */
+}
+
+.sidebar-closed #videoGrid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Justera antalet kolumner när sidebar är stängd */
+}
+
+/* Global Styles */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: auto;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #121212;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  color: #cccccc;
+}
+
+body.sidebar-open {
+  margin-left: 250px; /* Detta skapar utrymme för sidopanelen */
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+form {
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #121212; /* Samma färg som sidebar och main */
+  padding: 10px 20px;
+  border-bottom: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+
+/* Kanalens banner */
+.banner {
+  width: 100%;
+  height: 200px; /* Justera höjden på bannern */
+  background-color: #333; /* Grå bakgrund för bannern */
+  position: relative;
+}
+
+.banner-content {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.banner h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.banner p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Kanallogga under bannern */
+.logo-under-banner {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Placera loggan till vänster */
+  align-items: center;
+  margin-top: -50px; /* Justera för att lägga loggan närmare bannern */
+  padding: 10px 20px;
+  background-color: #f9f9f9; /* Ljus bakgrund för loggans container */
+}
+
+.logo-under-banner .logo-img {
+  width: 100px; /* Justera loggans storlek här */
+  height: 100px;
+  border-radius: 50%; /* För en rund logga */
+  margin-right: 15px;
+}
+
+/* Allmänna stilar för kanalinformation */
+.channel-info {
+  display: flex;
+  align-items: center; /* Vertikal centrering av text och statistik */
+  flex-wrap: wrap; /* Så att innehållet bryts på små skärmar */
+  justify-content: flex-start; /* Justera till vänster */
+  width: 100%; /* Se till att hela bredden används för att fördela utrymme */
+}
+
+/* Kanalnamn */
+.channel-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  flex-basis: 100%; /* Gör kanalnamnet en egen rad om det behövs */
+}
+
+/* Användarnamn och statistiska uppgifter */
+.channel-handle,
+.channel-stats {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 5px 0;
+  display: inline-block; /* Se till att de beter sig som inline-element */
+}
+
+/* Separera användarnamn och statistik */
+.channel-handle {
+  margin-right: 10px; /* Lägg till mellanrum mellan @handtaget och prickarna */
+}
+
+.channel-stats {
+  display: flex; /* För att kunna hantera "subscribers" och "videos" i rad */
+  align-items: center; /* Vertikal centrering */
+}
+
+/* Prenumeranter och videor */
+.subscribers,
+.videos {
+  font-weight: bold;
+  color: #606060;
+  margin-right: 10px; /* Mellanrum mellan prenumeranter och videor */
+}
+
+.channel-stats .videos {
+  margin-right: 0; /* Ta bort extra mellanrum efter "videos" */
+}
+
+/* Prickar */
+.dot {
+  font-size: 20px; /* Justera storleken på punkterna */
+  color: #ffffff; /* Färgen på punkterna */
+  margin: 0 3px; /* Jämnt mellanrum på båda sidor om punkterna */
+  display: inline-block; /* Se till att de beter sig som inline-element */
+}
+
+/* Beskrivning och "Visa mer"-knappen */
+.description {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.description span {
+  color: #606060;
+}
+
+/* Stilar för 'mer'-knappen */
+.more-button {
+  color: #ffffff; /* Vit textfärg för länken */
+  text-decoration: none; /* Ta bort understrykning */
+  font-size: 14px; /* Anpassa textstorleken */
+  cursor: pointer; /* Gör pekhanden synlig */
+}
+
+.more-button:hover {
+  text-decoration: underline; /* Lägg till understrykning vid hovring */
+}
+
+/* Popup-stil */
+.popup {
+  display: none; /* Göm popupen som standard */
+  position: fixed; /* Fäst popupen på skärmen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Bakgrundsfärg med transparens */
+  z-index: 1000; /* Se till att popupen är ovanpå allt */
+  overflow: auto; /* Om innehållet är för stort, gör det rullbart */
+}
+
+/* Innehållet i popupen */
+.popup-content {
+  position: relative;
+  background-color: rgb(33, 33, 33);
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Text i popupen */
+.popup-content p {
+  color: rgb(255, 255, 255);
+}
+
+/* Stängningsknappen "X" */
+.close {
+  font-size: 30px;
+  color: #000;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 40px; /* Sätt en fast bredd */
+  height: 40px; /* Sätt en fast höjd så att det blir en cirkel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Gör den rund för att skapa en cirkel */
+  transition: background-color 0.3s ease; /* Gör övergången mjuk */
+}
+
+.close:hover {
+  color: #fff; /* Ändra textfärgen till vit */
+  background-color: #d3d3d3; /* Ljusgrå bakgrundsfärg */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Show more button */
+.show-more {
+  background-color: #007bff; /* YouTube-lik blå */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.show-more:hover {
+  background-color: #0056b3; /* Mörkare blå vid hover */
+}
+
+/* "Website Link" */
+.website-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+/* Extra länkar */
+.extra-links {
+  display: flex;
+  gap: 10px;
+}
+
+.extra-links a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+/* Kanalens huvudinformation */
+.channel-main-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Justera för att minska avståndet */
+}
+
+/* Profilflikarna (om du har en separat container för dessa) */
+.profile-tabs {
+  margin-top: 10px; /* Lägg till eller justera för att minska avståndet */
+  padding-top: 5px; /* Justera om det behövs */
+}
+
+/* Justera om det behövs för andra delar av layouten */
+.channel-details {
+  margin-bottom: 0; /* Ta bort eventuella extra mellanrum */
+}
+
+.channel-banner-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.channel-logo-container {
+  margin: 0; /* Ta bort alla marginaler */
+  padding: 0; /* Ta bort all padding */
+  margin-right: 20px; /* Behåll rätt marginal om det behövs */
+  display: flex; /* Om du vill centrera innehåll vertikalt */
+  align-items: center; /* Centrera innehållet vertikalt */
+}
+
+/* Uppdaterad storlek på kanalloggan */
+.channel-logo {
+  width: 300px; /* Större logga än tidigare */
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrera logotypen */
+  flex: 0 0 10px;
+  margin: 0;
+}
+
+.logo-img {
+  width: 75px; /* Ändra till den storlek du vill ha */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Lägg till utrymme under headern */
+.channelContent {
+  height: 80; /* Justera höjden beroende på headerns storlek */
+  background-color: transparent; /* Behåll bakgrundsfärgen transparent för att matcha sidan */
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #333; /* Bakgrundsfärg som visas om bilden inte laddas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7); /* Mörkare effekt för bättre kontrast */
+}
+
+.banner-text {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+}
+
+.banner-text h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 1.2em;
+}

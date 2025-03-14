@@ -1,0 +1,14 @@
+script.js:21 Skickar följande text till servern: test
+script.js:23 
+        
+        
+       POST http://localhost:3000/save net::ERR_BLOCKED_BY_CLIENT
+sparaText @ script.js:23
+onclick @ (index):14
+script.js:34 Error: TypeError: Failed to fetch
+    at sparaText (script.js:23:5)
+    at HTMLButtonElement.onclick ((index):14:39)
+(anonymous) @ script.js:34
+Promise.catch
+sparaText @ script.js:34
+onclick @ (index):14

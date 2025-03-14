@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Säker Sida</title>
+</head>
+<body>
+    <h1>Välkommen till en skyddad sida</h1>
+    <script>
+        // Simulerad inloggningsstatus (ändra till `true` för att testa åtkomst)
+        const hasAccess = false; // `false` betyder att användaren inte har åtkomst
+
+        if (!hasAccess) {
+            // Omdirigera till 403-sidan
+            window.location.href = '/403.html';
+        }
+    </script>
+</body>
+</html>

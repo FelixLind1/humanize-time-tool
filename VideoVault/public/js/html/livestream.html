@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page-title">VideoVault - Livestream</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Behåll denna rad -->
+    <link rel="icon" href="/databas/images/favicon_io/favicon-16x16.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../html/index.html">
+                    <img src="/databas/images/VideoVault.jpg" alt="VideoVault logga" class="logo-img"> <!-- Bevarar loggans storlek -->
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="searchInput" placeholder="Sök efter videor..." data-translate="searchPlaceholder">
+                <button id="search-button" class="search-button" onclick="search()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>    
+             <!-- Navigation -->
+        <nav id="navMenu" class="nav-menu">
+            <ul class="nav-buttons">
+                <select id="languageSelect" onchange="changeLanguage(this.value)" data-translate="language-selector">
+                    <option value="sv" data-translate="language-sv">Svenska</option>
+                    <option value="en" data-translate="language-en">English</option>
+                </select>
+                <li><a href="../html/upload.html"><i class="fas fa-upload"></i><span data-translate="uploadText">Ladda upp</span></a></li>
+                <li><a href="../html/livestream.html"><i class="fas fa-broadcast-tower"></i><span data-translate="livestreamText">Livestream</span></a></li>
+                <li><a href="../html/login-signup.html"><i class="fas fa-user"></i><span data-translate="loginText">Logga in</span></a></li>
+                <li>
+                    <a href="../html/profile.html" class="circle-button">
+                        <i class="fas fa-user-circle"></i>
+                        <span data-translate="accountText">Mitt konto</span>
+                    </a>
+                </li>                
+            </ul>
+        </nav>  
+        </header>
+        <main>
+            <h2>Livestream</h2>
+            <div class="livestream-container">
+                <div class="video-container">
+                    <!-- Ta bort videospelaren -->
+                </div>
+                <div class="chat-container">
+                    <h3>Chatt</h3>
+                    <div id="chat-box">
+                        <!-- Här kan chattmeddelanden visas -->
+                    </div>
+                    <input type="text" id="chat-input" placeholder="Skriv ett meddelande...">
+                    <button id="send-chat">Skicka</button>
+                </div>
+            </div>            
+        </main>    
+    </div>
+
+    <script src="../js/livestream.js"></script>
+</body>
+</html>

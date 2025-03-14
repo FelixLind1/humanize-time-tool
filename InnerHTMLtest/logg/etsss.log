@@ -1,0 +1,14 @@
+192.168.0.35/:1 Access to fetch at 'http://localhost:3000/save' from origin 'http://192.168.0.35:8083' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The 'Access-Control-Allow-Origin' header has a value 'http://192.168.0.35:3000' that is not equal to the supplied origin. Have the server send the header with a valid value, or, if an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+script.js:13 
+        
+        
+       POST http://localhost:3000/save net::ERR_FAILED
+sparaText @ script.js:13
+onclick @ (index):19
+script.js:31 Fel vid sparande: TypeError: Failed to fetch
+    at sparaText (script.js:13:9)
+    at HTMLButtonElement.onclick ((index):19:43)
+(anonymous) @ script.js:31
+Promise.catch
+sparaText @ script.js:30
+onclick @ (index):19

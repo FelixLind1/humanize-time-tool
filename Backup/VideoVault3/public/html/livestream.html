@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoVault - Livestream</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Länk till gemensam CSS-fil -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="../html/index.html">
+                    <img src="../images/logo2.png" alt="VideoVault logga" class="logo-img"> <!-- Bevarar loggans storlek -->
+                </a>
+            </div>
+            <div class="language-container">
+                <select id="languageSelector" onchange="changeLanguage()">
+                    <option value="sv">Svenska</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="../html/upload.html"><i class="fas fa-upload"></i><span>Ladda upp</span></a></li>
+                    <li><a href="../html/livestream.html"><i class="fas fa-broadcast-tower"></i><span>Livestream</span></a></li>
+                    <li><a href="../html/login.html"><i class="fas fa-user"></i><span>Logga in</span></a></li>
+                    <li><a href="../html/account.html"><i class="fas fa-user-circle"></i><span>Mitt konto</span></a></li>
+                </ul>            
+            </nav>   
+        </header>
+        <main>
+            <h2>Livestream</h2>
+            <div class="video-container">
+                <video id="live-video" controls class="live-video">
+                    <!-- Placeholder för livestreamen -->
+                    <source src="../videos/sample-live-stream.mp4" type="video/mp4">
+                    Din webbläsare stöder inte video-taggen.
+                </video>
+            </div>
+            <div class="chat-container">
+                <h3>Chatt</h3>
+                <div id="chat-box">
+                    <!-- Här kan chattmeddelanden visas -->
+                </div>
+                <input type="text" id="chat-input" placeholder="Skriv ett meddelande...">
+                <button id="send-chat">Skicka</button>
+            </div>
+        </main>    
+
+        <footer>
+            <p>&copy; 2024 Video Webbplats. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <script src="../js/common.js"></script>
+</body>
+</html>

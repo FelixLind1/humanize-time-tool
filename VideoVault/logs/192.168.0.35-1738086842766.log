@@ -1,0 +1,14 @@
+getVideos.js:5 videoID from URL: 2
+search.js:36 Sökfältet finns och är tillgängligt.
+search.js:56 Laddar videoData...
+sidebar.js:45 Sidopanelen finns: <aside class=​"sidebar">​…​</aside>​
+sidebar.js:48 Sidopanelens innehåll finns: <ul>​…​</ul>​
+language.js:17 {sv: {…}, en: {…}}
+video.html:81 
+        
+        
+       GET http://192.168.0.35:8080/public/html/undefined 404 (Not Found)
+getVideos.js:20 Full video data: {id: '2', title: 'Amazing Nature', description: "A breathtaking journey through nature's wonders.", tags: Array(3), videoFile: '/uploads/videos/nature.mp4', …}
+getVideos.js:23 Video URL: undefined
+search.js:60 DynamicVideoData hämtad: (4) [{…}, {…}, {…}, {…}]
+search.js:74 Hämtad sökfråga från URL: null

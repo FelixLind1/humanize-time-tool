@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VideoVault - Sökresultat för videor">
+    <title>Sökresultat - VideoVault</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="/databas/images/favicon_io/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="hamburger-menu" id="hamburgerMenu" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <a href="index.html">
+                <img src="/databas/images/VideoVault.jpg" alt="VideoVault logga" class="logo-img" data-translate="logo-alt">
+            </a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="searchInput" placeholder="Sök efter videor..." data-translate="searchPlaceholder">
+            <button id="search-button" class="search-button" onclick="search()">
+                <i class="fas fa-search" data-translate="searchButton"></i>
+            </button>
+        </div>            
+        <nav id="navMenu" class="nav-menu">
+            <ul class="nav-buttons">
+                <select id="languageSelect" onchange="changeLanguage(this.value)" data-translate="language-selector">
+                    <option value="sv" data-translate="language-sv">Svenska</option>
+                    <option value="en" data-translate="language-en">English</option>
+                </select>
+                <li><a href="../html/upload.html"><i class="fas fa-upload"></i><span data-translate="uploadText">Ladda upp</span></a></li>
+                <li><a href="../html/livestream.html"><i class="fas fa-broadcast-tower"></i><span data-translate="livestreamText">Livestream</span></a></li>
+                <li><a href="../html/login-signup.html"><i class="fas fa-user"></i><span data-translate="loginText">Logga in</span></a></li>
+                <li>
+                    <a href="../html/profile.html" class="circle-button">
+                        <i class="fas fa-user-circle"></i>
+                        <span data-translate="accountText">Mitt konto</span>
+                    </a>
+                </li>                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Huvudinnehåll -->
+    <div class="main-container">
+        <main class="main-content">
+            <div id="searchResultsContainer"></div> <!-- Här visas sökresultaten -->
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <script src="../js/language.js"></script>
+        <script src="../js/dynamicVideoData.js"></script>
+        <script type="module" src="../js/search.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+    </footer>
+</body>
+</html>
