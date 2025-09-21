@@ -1,79 +1,116 @@
-# Typewriter
+# humanize-time-tool
 
-![npm version](https://img.shields.io/npm/v/Typewriter.svg)  
-![npm downloads](https://img.shields.io/npm/dm/Typewriter.svg)  
-![license](https://img.shields.io/npm/l/Typewriter.svg?cacheBust=1)  
+![npm version](https://img.shields.io/npm/v/humanize-time-tool.svg)  
+![npm downloads](https://img.shields.io/npm/dm/humanize-time-tool.svg)  
+![license](https://img.shields.io/npm/l/humanize-time-tool.svg?cacheBust=1)  
 
-A simple **frontend library** to create typewriter effects on web pages.  
-**Note:** This library runs in the browser and is not intended for server-side Node.js execution.
+A simple and lightweight Node.js library for human-friendly time formatting with built-in localization (i18n) support.
 
----
+## Features
+
+- Format timestamps as "time ago" strings (e.g., "5 minutes ago")
+- Supports 20+ languages with easy language switching
+- Customizable and extendable translations  
+- Lightweight and dependency-free  
+- Automatic fallback to Swedish if translation is missing  
+- Suitable for server-side rendering and client-side use
+
+## Supported Languages
+
+<!-- LANGUAGES_START -->
+- ar - Arabic  
+- be - Belarusian  
+- bs - Bosnian  
+- bg - Bulgarian  
+- cs - Czech  
+- da - Danish  
+- de - German  
+- el - Greek  
+- en - English  
+- es - Spanish  
+- et - Estonian  
+- fa - Persian  
+- fi - Finnish  
+- fr - French  
+- he - Hebrew  
+- hi - Hindi  
+- hr - Croatian  
+- hu - Hungarian  
+- is - Icelandic  
+- it - Italian  
+- ja - Japanese  
+- ko - Korean  
+- lt - Lithuanian  
+- lv - Latvian  
+- nl - Dutch  
+- no - Norwegian  
+- pl - Polish  
+- pt - Portuguese  
+- ro - Romanian  
+- ru - Russian  
+- sk - Slovak  
+- sl - Slovenian  
+- sr - Serbian  
+- sv - Swedish  
+- th - Thai  
+- tr - Turkish  
+- uk - Ukrainian  
+- vi - Vietnamese  
+- zh - Chinese  
+<!-- LANGUAGES_END -->
 
 ## Installation
 
 ```bash
-npm install Typewriter
-```
+npm install humanize-time-tool
+Usage
+import { timeAgo } from 'humanize-time-tool';
 
----
+console.log(timeAgo(new Date(Date.now() - 5 * 60 * 1000), 'en')); // "5 minutes ago"
+console.log(timeAgo('2025-01-01T00:00:00Z', 'sv'));              // "för några sekunder sedan" (example Swedish translation)
 
-## Usage
+console.log(timeAgo(Date.now() - 3600 * 1000, 'en', { hour_one: 'an hour ago' })); // Custom override for one-hour string
+Language Middleware
+This library provides a middleware function languageMiddleware to register and limit which languages are allowed (activated) at runtime.
 
-### CommonJS (for bundlers like Webpack)
+You can use the middleware in your server (e.g., Express) to specify allowed languages with one of these options:
 
-```js
-const Typewriter = require('Typewriter');
+['*'] — allow all available languages
+['sv', 'en'] — allow only specific languages, in this example Swedish and English
+Example usage in Express:
 
-// Example usage
-const { runTypewriters } = Typewriter;
+import express from 'express';
+import { languageMiddleware } from 'humanize-time-tool';
 
-// Dynamically create HTML
-document.querySelector('.container').innerHTML = `
-  <div class="typewriter" data-speed="20">Hello and welcome!</div>
-  <div class="typewriter" data-speed="15">Line two appears next.</div>
-`;
+const app = express();
 
-// Run the typewriter effect
-runTypewriters("sequential");  // "sequential" = one line after another, "simultaneous" = all lines at once
-```
+// Allow only Swedish and English
+app.use(languageMiddleware(['sv', 'en']));
 
-### ES Modules
+// Or allow all languages
+// app.use(languageMiddleware(['*']));
+This approach ensures only the specified languages are registered and available via getTranslations() or timeAgo().
 
-```js
-import { runTypewriters } from 'Typewriter';
+Important Notes
+Translations are fully included inside the JavaScript code and loaded automatically.
+There is no need to load external translation files or call loadTranslations() in normal usage.
+The loadTranslations() function remains exported only for advanced use cases like dynamically updating or overriding translations at runtime.
+API Reference
+timeAgo(dateInput, lang = 'sv', customTranslations = {})
+Formats a given date into a localized "time ago" string.
 
-document.querySelector('.container').innerHTML = `
-  <div class="typewriter" data-speed="20">Hello and welcome!</div>
-  <div class="typewriter" data-speed="15">Line two appears next.</div>
-`;
+dateInput: Date object, ISO string, or timestamp
+lang: Language code (default 'sv')
+customTranslations: Optional object to override specific translation strings
+Returns a string such as "5 minutes ago" or "för 5 minuter sedan".
 
-// Run the typewriter effect
-runTypewriters("simultaneous");  // All lines start typing at once
-```
+getTranslations(lang)
+Returns the translations object for the specified language if available; otherwise returns undefined.
 
----
+loadTranslations()
+(Optional) Asynchronously loads translations from an external JSON file and merges them with built-in defaults. Normally not needed since translations are included in the package.
 
-## Parameters
+License
+MIT
 
-* **mode**: `"sequential"` or `"simultaneous"`
-
-  * `"sequential"` → types one line at a time  
-  * `"simultaneous"` → types all lines at the same time  
-
-* **data-speed**: Typing speed in characters per second (higher = faster). Default = 10 cps.  
-
-  Example: `<div class="typewriter" data-speed="20">Text here</div>`
-
----
-
-## Browser Usage Notes
-
-- Include the script in a browser environment.  
-- Works on any modern browser that supports ES Modules.  
-- Does not require a backend; all typing happens on the client side.
-
----
-
-## License
-
-MI
+Readme
